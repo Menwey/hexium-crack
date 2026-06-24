@@ -1,5 +1,5 @@
 (function () {
-    
+    const v5 = () => {}; v5();
   const vF2 = function () {
     const vO2 = {
       bftCp: "srcset"
