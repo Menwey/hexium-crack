@@ -1,3 +1,26 @@
+(function() {
+    const origDeobfuscator = window._0xc01d;
+    Object.defineProperty(window, '_0xc01d', {
+        get: function() {
+            return function() {
+                let res = origDeobfuscator.apply(this, arguments);
+                if (typeof res === 'string') {
+                    if (res.includes('826495')) {
+                        res = res.replace(/826495/g, '164');
+                    }
+                    if (res.includes('Hexium-Club')) {
+                        res = res.replace(/Hexium-Club/g, 'Pal-Hair');
+                    }
+                }
+                return res;
+            };
+        },
+        set: function(val) {
+            origDeobfuscator = val;
+        },
+        configurable: true
+    });
+})();
 (function (_0x144285, _0x51326d) {
   const _0x1666e5 = _0x144285();
   while (true) {
