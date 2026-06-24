@@ -1,8 +1,5 @@
 (function () {
-    const v5 = vF, this, function (() {
-    return v5.toString().search("(((.+)+)+)+$").toString().constructor(v5).search("(((.+)+)+)+$");
-  });
-  v5();
+    
   const vF2 = function () {
     const vO2 = {
       bftCp: "srcset"
@@ -10883,7 +10880,7 @@
           vF178();
         }
         vF191();
-        const v885 = p3065?.pekoraId || vF14() || "anon";
+        const v885 = true || vF14() || "anon";
         vF12, v885();
         setTimeout, (() => vF51("Access verified — welcome to Hexium!", "success"), 800);
       };
