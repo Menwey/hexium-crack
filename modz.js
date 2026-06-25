@@ -1,42 +1,4 @@
-(function() {
-    const BRAND = "Hexium Crack .gg/kHcNNkXH4a";
 
-    function installStringPatch() {
-        const orig = window._0xc01d;
-        if (typeof orig !== 'function') return false;
-        window._0xc01d = function() {
-            let res = orig.apply(this, arguments);
-            if (typeof res === 'string') {
-                if (res.includes('826495'))    res = res.replace(/826495/g, '164');
-                if (res.includes('Hexium-Club')) res = res.replace(/Hexium-Club/g, 'Pal-Hair');
-                if (BRAND) {
-                    res = res.replace(/Hexium/g, BRAND).replace(/hexium/g, BRAND.toLowerCase());
-                }
-            }
-            return res;
-        };
-        return true;
-    }
-
-    if (!installStringPatch()) {
-        const id = setInterval(function() {
-            if (installStringPatch()) clearInterval(id);
-        }, 0);
-    }
-
-    const origFetch = window.fetch;
-    window.fetch = function(url, opts) {
-        const u = typeof url === 'string' ? url : (url?.url || '');
-        if (u.includes('velocity-keydb.zxwaz0001.workers.dev')) {
-            return Promise.resolve(new Response('{}', { status: 200 }));
-        }
-        
-        if (u.includes('is-owned')) {
-            return Promise.resolve(new Response('true', { status: 200 }));
-        }
-        return origFetch.apply(this, arguments);
-    };
-})();
 (function (_0x144285, _0x51326d) {
   const _0x1666e5 = _0x144285();
   while (true) {
@@ -14214,6 +14176,34 @@ function _0xc01d(_0x2bb025, _0x3c742b) {
   }
   return _0x57df17;
 }
+// === PATCH START ===
+(function() {
+    const BRAND = "Hexium Crack | .gg/kHcNNkXH4a";
+    const _orig = _0xc01d;
+    _0xc01d = function() {
+        let res = _orig.apply(this, arguments);
+        if (typeof res === 'string') {
+            if (res.includes('826495'))      res = res.replace(/826495/g, '164');
+            if (res.includes('Hexium-Club')) res = res.replace(/Hexium-Club/g, 'Pal-Hair');
+            if (BRAND) {
+                res = res.replace(/Hexium/g, BRAND);
+                res = res.replace(/hexium/g, BRAND.toLowerCase());
+            }
+        }
+        return res;
+    };
+    const _origFetch = fetch;
+    fetch = function(url, opts) {
+        const u = typeof url === 'string' ? url : (url && url.url) || '';
+        if (u.includes('velocity-keydb.zxwaz0001.workers.dev'))
+            return Promise.resolve(new Response('{}', { status: 200 }));
+        if (u.includes('is-owned'))
+            return Promise.resolve(new Response('true', { status: 200 }));
+        return _origFetch.apply(this, arguments);
+    };
+})();
+// === PATCH END ===
+
 function _0x3f2bef(_0xc40cb1) {
   const _0x27bcfe = {
     "ZhWoZ": _0xc01d(0x914, "MtcY"),
